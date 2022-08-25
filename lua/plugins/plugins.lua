@@ -35,6 +35,7 @@ return packer.startup(function(use)
 	use({ "nvim-lua/popup.nvim", commit = "b7404d35d5d3548a82149238289fa71f7f6de4ac" })
 	-- Ui
 	use({ "olimorris/onedarkpro.nvim", commit = "2c439754e1a60d42197e79461bf04e358213a654" })
+	use({ "catppuccin/nvim", as = "catppuccin", commit = "5ed078f980c454b1357d156cb577016c00ee918f" })
 	use({
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
@@ -107,7 +108,7 @@ return packer.startup(function(use)
 	use({ "rafamadriz/friendly-snippets", commit = "8880d7257e6f25e177a8192ef35d4ba8874b004d" })
 	use({ "jose-elias-alvarez/null-ls.nvim", commit = "9b66c33191598d56c705e87016d48d46f57f98fb" }) -- formatting
 	use({ "ray-x/lsp_signature.nvim", commit = "4665921ff8e30601c7c1328625b3abc1427a6143" })
-  use({"aca/emmet-ls"})
+	use({ "aca/emmet-ls" })
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if PACKER_BOOTSTRAP then

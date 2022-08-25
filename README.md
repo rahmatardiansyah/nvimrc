@@ -1,3 +1,4 @@
+# Personal Neovim Configuration
 
 ## dependencies
 * [tree-sitter](https://github.com/tree-sitter/tree-sitter)
@@ -11,6 +12,7 @@
 * [lua-language-server](https://github.com/sumneko/)
 * [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
 * [trash-cli](https://github.com/andreafrancia/trash-cli)
+
 ### Arch Linux / Pacman Package Manager
 ```
 sudo pacman -S tree-sitter ripgrep fd stylua lua-language-server trash-cli
