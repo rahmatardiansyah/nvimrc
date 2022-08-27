@@ -12,5 +12,6 @@ null_ls.setup({
 		formatting.prettier,
 		formatting.stylua,
 		formatting.beautysh,
+		formatting.nixfmt,
 	},
 })

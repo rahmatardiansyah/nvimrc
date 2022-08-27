@@ -6,5 +6,9 @@
   "snip2": {
     "prefix": "all2",
     "body": ["multi $1", "line $2", "snippet$0"]
+  },
+  "html": {
+    "prefix": "src",
+    "body": ["<script src='$1'>$2</script>"]
   }
 }
