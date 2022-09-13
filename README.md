@@ -13,9 +13,14 @@
 * [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
 * [trash-cli](https://github.com/andreafrancia/trash-cli)
 
+### Fedora dnf
+```
+sudo dnf in neovim gcc-c++ tree-sitter-cli
+```
+
 ### Arch Linux / Pacman Package Manager
 ```
-sudo pacman -S tree-sitter ripgrep fd stylua lua-language-server trash-cli
+sudo pacman -S neovim xsel xclip tree-sitter ripgrep fd stylua lua-language-server trash-cli
 ```
 
 ### NPM / package manager for Node.js

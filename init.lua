@@ -12,8 +12,8 @@ require("autocmds")
 require("plugins.plugins")
 
 -- Colorscheme
--- require("plugins.onedarkpro")
-require("plugins.catppuccin")
+require("plugins.onedarkpro")
+-- require("plugins.catppuccin")
 
 -- Keymaps
 require("keymaps")
