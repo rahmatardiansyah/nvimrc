@@ -1,5 +1,7 @@
-vim.opt.guicursor = ""
+local api = vim.api
 
+vim.g.t_co = "xterm-256color"
+vim.g.background = "dark"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
@@ -36,3 +38,23 @@ vim.opt.guicursor = "n-v-c:block"
 -- Better Netrw
 vim.g.netrw_banner = 0 -- Hide banner
 vim.g.netrw_lifestyle = 3 -- Hide banner
+
+-- go to last loc when opening a buffer
+api.nvim_create_autocmd(
+"BufReadPost",
+{ command = [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif]] }
+)
+
+-- api.nvim_create_autocmd(
+-- "BufWritePost",
+-- { command = [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif]] }
+-- )
+
+-- apply xresources file on save
+vim.cmd [[
+    augroup xresources
+    autocmd!
+    autocmd BufWritePost .Xresources !xrdb -load ~/.Xresources
+    augroup end
+]]
+
