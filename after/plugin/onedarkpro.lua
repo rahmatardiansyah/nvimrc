@@ -1,9 +1,9 @@
 require("onedarkpro").setup({
 	colors = {}, -- Override default colors or create your own
 	highlights = {
-        ["@text.diff.add"] = { fg = "#98c379", bg = "#282c34" },
-        ["@text.diff.delete"] = { fg = "#e06c75", bg = "#282c34" }
-    }, -- Override default highlight groups or create your own
+		["@text.diff.add"] = { fg = "#98c379" },
+		["@text.diff.delete"] = { fg = "#e06c75" },
+	}, -- Override default highlight groups or create your own
 	filetypes = { -- Override which filetype highlight groups are loaded
 		-- See the 'Configuring filetype highlights' section for the available list
 	},

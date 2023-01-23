@@ -1,6 +1,5 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>pe", vim.cmd.Ex)
-vim.keymap.set("n", "<leader>pv", vim.cmd.Vex)
+vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
 -- Disable arrow keys
 vim.keymap.set("n", "<Left>", '<ESC>:echo "Use h"<CR>')
@@ -15,4 +14,3 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- greatest remap ever
 vim.keymap.set("v", "<leader>p", [["_dp]])
-vim.keymap.set("n", "<leader>pl", ":!alacritty -t float -e lf<CR>")

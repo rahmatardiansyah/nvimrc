@@ -45,11 +45,6 @@ api.nvim_create_autocmd(
 { command = [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif]] }
 )
 
--- api.nvim_create_autocmd(
--- "BufWritePost",
--- { command = [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif]] }
--- )
-
 -- apply xresources file on save
 vim.cmd [[
     augroup xresources
@@ -57,4 +52,3 @@ vim.cmd [[
     autocmd BufWritePost .Xresources !xrdb -load ~/.Xresources
     augroup end
 ]]
-
