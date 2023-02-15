@@ -194,6 +194,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/mat/.local/share/nvim/site/pack/packer/start/vim-be-good",
     url = "https://github.com/ThePrimeagen/vim-be-good"
+  },
+  ["vim-hugo"] = {
+    loaded = true,
+    path = "/home/mat/.local/share/nvim/site/pack/packer/start/vim-hugo",
+    url = "https://github.com/phelipetls/vim-hugo"
   }
 }
 
