@@ -1,0 +1,42 @@
+-----------------------------------------------------------
+-- Define keymaps of Neovim and installed plugins.
+-----------------------------------------------------------
+local function map(mode, lhs, rhs, opts)
+  local options = { noremap = true, silent = true }
+  if opts then
+    options = vim.tbl_extend('force', options, opts)
+  end
+  vim.api.nvim_set_keymap(mode, lhs, rhs, options)
+end
+
+-- Change leader to a space
+vim.g.mapleader = " "
+
+-- Disable arrow keys
+map("n", "<Left>", '<ESC>:echo "Use h"<CR>')
+map("n", "<Down>", '<ESC>:echo "Use j"<CR>')
+map("n", "<Up>", '<ESC>:echo "Use k"<CR>')
+map("n", "<Right>", '<ESC>:echo "Use l"<CR>')
+
+-- Clear search highlighting with <leader> and c
+map('n', '<leader>c', ':nohl<CR>')
+
+-- Change split orientation
+map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
+map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
+
+-- Move around splits using Ctrl + {h,j,k,l}
+-- map('n', '<C-h>', '<C-w>h')
+-- map('n', '<C-j>', '<C-w>j')
+-- map('n', '<C-k>', '<C-w>k')
+-- map('n', '<C-l>', '<C-w>l')
+
+map('n', '<leader>e', ':Ex<CR>')
+
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+
+-- greatest remap ever
+-- vim.keymap.set("v", "<leader>p", [["_dp]])
