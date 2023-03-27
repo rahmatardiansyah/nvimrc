@@ -1,7 +1,7 @@
 local null_ls = require("null-ls")
 
 require("mason-null-ls").setup({
-	ensure_installed = { "stylua", "prettier", "latexindent" },
+	ensure_installed = { "stylua", "prettier", "latexindent" , "rnix-lsp" },
 	autocomplete = true,
 	automatic_setup = true,
 })
