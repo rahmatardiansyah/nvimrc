@@ -100,6 +100,8 @@ return require('packer').startup(function(use)
 
 	use({ 'lervag/vimtex' })
 
+	use('NvChad/nvim-colorizer.lua')
+
 	-- Put this at the end after all plugins
 	if packer_bootstrap then
 		require('packer').sync()

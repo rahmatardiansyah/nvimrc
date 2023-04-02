@@ -42,6 +42,28 @@ lsp.setup_nvim_cmp({
 	mapping = cmp_mappings,
 })
 
+require("lspconfig").lua_ls.setup({
+	on_attach = function(client, bufnr)
+		print("lua_ls running")
+	end,
+	settings = {
+		Lua = {
+			runtime = {
+				version = "LuaJIT",
+			},
+			diagnostics = {
+				globals = { "vim" },
+			},
+			workspace = {
+				library = vim.api.nvim_get_runtime_file("", true),
+			},
+			telemetry = {
+				enable = false,
+			},
+		},
+	},
+})
+
 lsp.setup()
 
 require("lsp/autocomplete")
