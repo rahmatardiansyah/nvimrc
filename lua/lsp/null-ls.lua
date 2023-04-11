@@ -13,8 +13,6 @@ require("null-ls").setup({
     }
 })
 
-require("mason-null-ls").setup_handlers()
-
 null_ls.setup({
 	debug = true,
 })

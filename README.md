@@ -15,7 +15,7 @@
 
 ### Fedora dnf
 ```
-sudo dnf in neovim gcc-c++ tree-sitter-cli
+sudo dnf in neovim gcc-c++ tree-sitter-cli ripgrep fd-find
 ```
 
 ### Arch Linux / Pacman Package Manager
