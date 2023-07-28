@@ -35,9 +35,6 @@ return require('packer').startup(function(use)
 			require('nvim-autopairs').setup({})
 		end,
 	})
-	use({
-		'p00f/nvim-ts-rainbow',
-	})
 	-- Telescope
 	use({
 		'nvim-telescope/telescope.nvim',
