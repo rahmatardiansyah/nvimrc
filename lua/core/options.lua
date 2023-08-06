@@ -46,6 +46,8 @@ opt.updatetime = 250  -- ms to wait for trigger an event
 opt.undodir = vim.fn.stdpath("data") .. "/undo"
 opt.undofile = true
 
+vim.cmd([[autocmd FileType javascript,javascriptreact setlocal shiftwidth=2 tabstop=2]])
+
 -----------------------------------------------------------
 -- Startup
 -----------------------------------------------------------
