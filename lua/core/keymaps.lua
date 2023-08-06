@@ -18,12 +18,12 @@ map("n", "<Down>", '<ESC>:echo "Use j"<CR>')
 map("n", "<Up>", '<ESC>:echo "Use k"<CR>')
 map("n", "<Right>", '<ESC>:echo "Use l"<CR>')
 
--- Clear search highlighting with <leader> and c
-map('n', '<leader>c', ':nohl<CR>')
-
 -- Change split orientation
 map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
 map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
+
+map('n', '<leader>e', ':Ex<CR>')
+map('n', '<leader>E', ':Vex!<CR>')
 
 -- Move around splits using Ctrl + {h,j,k,l}
 -- map('n', '<C-h>', '<C-w>h')
@@ -31,7 +31,6 @@ map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical
 -- map('n', '<C-k>', '<C-w>k')
 -- map('n', '<C-l>', '<C-w>l')
 
-map('n', '<leader>e', ':Ex<CR>')
 
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
