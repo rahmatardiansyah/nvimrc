@@ -1,7 +1,7 @@
 local null_ls = require('null-ls')
 
 require('mason-null-ls').setup({
-	ensure_installed = { 'prettier', 'latexindent', 'rnix-lsp', 'lua-language-server' },
+	ensure_installed = { 'prettier', 'latexindent', 'lua-language-server' },
   automatic_installation = true,
 	autocomplete = true,
 	automatic_setup = true,

@@ -7,7 +7,7 @@ if not status_ok then
 end
 
 nvim_treesitter.setup({
-	ensure_installed = { 'html', 'css', 'javascript', 'markdown', 'bash', 'c', 'latex', 'lua', 'nix' },
+	ensure_installed = { 'html', 'css', 'javascript', 'markdown', 'bash', 'c', 'latex', 'lua', 'nix', 'yaml' },
 	sync_install = false,
 	auto_install = true,
 	ignore_install = {},
