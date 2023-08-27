@@ -23,6 +23,7 @@ return require('packer').startup(function(use)
 
 	-- Main Colorscheme
 	use('olimorris/onedarkpro.nvim')
+  use('RRethy/nvim-base16')
 
 	-- Treesitter
 	use({

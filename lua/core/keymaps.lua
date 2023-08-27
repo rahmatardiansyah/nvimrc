@@ -32,7 +32,4 @@ map('n', 'N', 'Nzzzv')
 
 map('n', '<esc><esc>', ':nohl<cr>')
 
-map('n', '<leader>w', '<cmd>lua vim.lsp.buf.format()<cr>')
-
--- greatest remap ever
--- vim.keymap.set("v", "<leader>p", [["_dp]])
+map('v', '<leader>p', [["_dp]])
