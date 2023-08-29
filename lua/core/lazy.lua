@@ -57,4 +57,5 @@ require('lazy').setup({
 		opts = {},
 	},
 	{ 'nvimdev/guard.nvim' },
+	{ 'lervag/vimtex' },
 })
