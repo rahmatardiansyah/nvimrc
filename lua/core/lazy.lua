@@ -56,6 +56,7 @@ require('lazy').setup({
 		event = 'InsertEnter',
 		opts = {},
 	},
-	{ 'nvimdev/guard.nvim' },
+	{ 'mhartington/formatter.nvim' },
+	-- { 'nvimdev/guard.nvim' },
 	{ 'lervag/vimtex' },
 })

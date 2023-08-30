@@ -16,4 +16,5 @@ lsp.setup_servers({ 'tsserver', 'eslint' })
 lsp.setup()
 
 require('lsp/cmp')
-require('lsp/guard')
+require('lsp/formatter')
+-- require('lsp/guard')
