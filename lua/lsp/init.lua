@@ -11,6 +11,10 @@ lsp.set_sign_icons({
 	info = '»',
 })
 
+vim.diagnostic.config({
+	virtual_text = false,
+})
+
 lsp.setup_servers({ 'tsserver', 'eslint' })
 
 lsp.setup()
