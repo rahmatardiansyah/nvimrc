@@ -17,9 +17,17 @@ require('tokyonight').setup({
 	dim_inactive = false,
 	lualine_bold = false,
 
-	on_colors = function(colors) end,
-
-	on_highlights = function(highlights, colors) end,
+	on_highlights = function(hl, c)
+		hl.CursorLine = {
+			bg = '#24283b',
+		}
+		hl.CursorLineNr = {
+			fg = '#ff9e64',
+		}
+		hl.LineNr = {
+			fg = '#a9b1d6',
+		}
+	end,
 })
 
 vim.cmd([[colorscheme tokyonight]])
