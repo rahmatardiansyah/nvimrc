@@ -8,5 +8,7 @@ require('plugins/treesitter')
 require('plugins/telescope')
 require('plugins/harpoon')
 require('plugins/gitsign')
+require('plugins/comment')
+require('plugins/rainbow')
 
 require('lsp')

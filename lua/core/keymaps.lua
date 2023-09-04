@@ -13,10 +13,10 @@ end
 vim.g.mapleader = ' '
 
 -- Disable arrow keys
-map('n', '<Left>', '<ESC>:echo "Use h"<CR>')
-map('n', '<Down>', '<ESC>:echo "Use j"<CR>')
-map('n', '<Up>', '<ESC>:echo "Use k"<CR>')
-map('n', '<Right>', '<ESC>:echo "Use l"<CR>')
+map('n', '<Left>', '<ESC>:echoerr "Use h"<CR>')
+map('n', '<Down>', '<ESC>:echoerr "Use j"<CR>')
+map('n', '<Up>', '<ESC>:echoerr "Use k"<CR>')
+map('n', '<Right>', '<ESC>:echoerr "Use l"<CR>')
 
 -- Change split orientation
 map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
@@ -32,4 +32,4 @@ map('n', 'N', 'Nzzzv')
 
 map('n', '<esc><esc>', ':nohl<cr>')
 
-map('v', '<leader>p', [["_dp]])
+map('v', '<leader>p', '"_dP')

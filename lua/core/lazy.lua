@@ -17,7 +17,12 @@ require('lazy').setup({
 		lazy = false,
 		priority = 1000,
 	},
-	{ 'nvim-treesitter/nvim-treesitter' },
+	{
+		'nvim-treesitter/nvim-treesitter',
+		dependencies = {
+			'JoosepAlviste/nvim-ts-context-commentstring',
+		},
+	},
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.2',
@@ -31,7 +36,6 @@ require('lazy').setup({
 	{
 		'numToStr/Comment.nvim',
 		event = { 'BufReadPre', 'BufNewFile' },
-		config = true,
 	},
 	{
 		'VonHeikemen/lsp-zero.nvim',
@@ -59,4 +63,9 @@ require('lazy').setup({
 	{ 'mhartington/formatter.nvim' },
 	-- { 'nvimdev/guard.nvim' },
 	{ 'lervag/vimtex' },
+	{ 'hiphish/rainbow-delimiters.nvim' },
+}, {
+	install = {
+		colorscheme = { 'tokyonight' },
+	},
 })
