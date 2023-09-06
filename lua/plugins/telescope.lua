@@ -1,6 +1,8 @@
 -----------------------------------------------------------
 -- Telescope configuration file
 -----------------------------------------------------------
+local actions = require('telescope.actions')
+
 require('telescope').setup({
 	defaults = {
 		file_ignore_patterns = { '%.jpeg', '%.png', '%.jpg', 'node_modules/.*' },
@@ -8,6 +10,11 @@ require('telescope').setup({
 			horizontal = {
 				width = 0.9,
 				preview_cutoff = 0,
+			},
+		},
+		mappings = {
+			i = {
+				['<esc><esc>'] = actions.close, -- Close telescope fast
 			},
 		},
 	},
