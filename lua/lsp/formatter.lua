@@ -8,6 +8,12 @@ require('formatter').setup({
 		lua = {
 			require('formatter.filetypes.lua').stylua,
 		},
+		html = {
+			require('formatter.filetypes.html').prettier,
+		},
+		css = {
+			require('formatter.filetypes.css').prettier,
+		},
 		javascript = {
 			require('formatter.filetypes.javascript').prettier,
 		},
@@ -17,12 +23,16 @@ require('formatter').setup({
 		nix = {
 			require('formatter.filetypes.nix').nixfmt,
 		},
+		['scss'] = {
+			require('formatter.filetypes.css').prettier,
+		},
 		['*'] = {
 			require('formatter.filetypes.any').remove_trailing_whitespace,
 		},
 	},
 })
 
+-- Format after save
 vim.cmd([[
 augroup FormatAutogroup
   autocmd!

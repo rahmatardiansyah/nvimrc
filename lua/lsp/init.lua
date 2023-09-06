@@ -15,7 +15,7 @@ vim.diagnostic.config({
 	virtual_text = false,
 })
 
-lsp.setup_servers({ 'tsserver', 'eslint' })
+lsp.setup_servers({ 'tsserver', 'eslint', 'emmet_ls', 'cssls' })
 
 lsp.setup()
 

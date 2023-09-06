@@ -44,8 +44,8 @@ require('lazy').setup({
 			{ 'neovim/nvim-lspconfig' },
 			{ 'hrsh7th/nvim-cmp' },
 			{ 'hrsh7th/cmp-nvim-lsp' },
-			{ 'hrsh7th/cmp-buffer' },
-			{ 'hrsh7th/cmp-path' },
+			{ 'hrsh7th/cmp-buffer' }, -- Optional
+			{ 'hrsh7th/cmp-path' }, -- Optional
 			{
 				'L3MON4D3/LuaSnip',
 				dependencies = {
@@ -64,6 +64,13 @@ require('lazy').setup({
 	-- { 'nvimdev/guard.nvim' },
 	{ 'lervag/vimtex' },
 	{ 'hiphish/rainbow-delimiters.nvim' },
+	{ 'mattn/emmet-vim' },
+	{ 'dcampos/cmp-emmet-vim' }, -- Need emmet-vim
+	{
+		'kylechui/nvim-surround',
+		version = '*',
+		event = 'VeryLazy',
+	},
 }, {
 	install = {
 		colorscheme = { 'tokyonight' },
