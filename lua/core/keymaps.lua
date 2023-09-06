@@ -33,3 +33,6 @@ map('n', 'N', 'Nzzzv')
 map('n', '<esc><esc>', ':nohl<cr>')
 
 map('v', '<leader>p', '"_dP')
+
+map('n', '<leader>fm', ':marks abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ<CR>:normal! `')
+map('n', '<leader>dm', ':delm! | delm A-Z0-9<CR>')
