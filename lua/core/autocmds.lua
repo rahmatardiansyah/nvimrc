@@ -40,9 +40,3 @@ autocmd('Filetype', {
 	pattern = { 'html', 'css', 'lua' },
 	command = 'setlocal shiftwidth=2 tabstop=2',
 })
-
--- go to last loc when opening a buffer
-autocmd(
-	'BufReadPost',
-	{ command = [[if line("'\"") > 1 && line("'\"") <= line("$") | execute "normal! g`\"" | endif]] }
-)
