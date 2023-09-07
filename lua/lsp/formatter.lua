@@ -23,6 +23,9 @@ require('formatter').setup({
 		nix = {
 			require('formatter.filetypes.nix').nixfmt,
 		},
+		tex = {
+			require('formatter.filetypes.latex').latexindent,
+		},
 		['scss'] = {
 			require('formatter.filetypes.css').prettier,
 		},
