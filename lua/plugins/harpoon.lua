@@ -19,10 +19,10 @@ require('harpoon').setup({
 	},
 })
 
-vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=#a9b1d6')
-vim.cmd('highlight! HarpoonActive guibg=NONE guifg=white')
-vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#ff9e64')
-vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#7aa2f7')
+vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=#5C6370')
+vim.cmd('highlight! HarpoonActive guibg=NONE guifg=#ABB2BF')
+vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#61AFEF')
+vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#ABB2BF')
 vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
 
 vim.keymap.set('n', '<leader>a', mark.add_file)

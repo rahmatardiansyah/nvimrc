@@ -21,4 +21,3 @@ lsp.setup()
 
 require('lsp/cmp')
 require('lsp/formatter')
--- require('lsp/guard')

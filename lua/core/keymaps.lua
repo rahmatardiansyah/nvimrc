@@ -18,6 +18,11 @@ map('n', '<Down>', '<ESC>:echoerr "Use j"<CR>')
 map('n', '<Up>', '<ESC>:echoerr "Use k"<CR>')
 map('n', '<Right>', '<ESC>:echoerr "Use l"<CR>')
 
+map('n', '<C-h>', '<C-w>h')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-l>', '<C-w>l')
+
 -- Change split orientation
 map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
 map('n', '<leader>th', '<C-w>t<C-w>H') -- change horizontal to vertical

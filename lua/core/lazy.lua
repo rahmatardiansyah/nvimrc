@@ -13,8 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
 	{
-		'folke/tokyonight.nvim',
-		lazy = false,
+		'olimorris/onedarkpro.nvim',
 		priority = 1000,
 	},
 	{
@@ -61,18 +60,16 @@ require('lazy').setup({
 		opts = {},
 	},
 	{ 'mhartington/formatter.nvim' },
-	-- { 'nvimdev/guard.nvim' },
 	{ 'lervag/vimtex' },
 	{ 'hiphish/rainbow-delimiters.nvim' },
-	{ 'mattn/emmet-vim' },
-	{ 'dcampos/cmp-emmet-vim' }, -- Need emmet-vim
 	{
 		'kylechui/nvim-surround',
 		version = '*',
 		event = 'VeryLazy',
 	},
+	{ 'NvChad/nvim-colorizer.lua' },
 }, {
 	install = {
-		colorscheme = { 'tokyonight' },
+		colorscheme = { 'onedark' },
 	},
 })

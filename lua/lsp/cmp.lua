@@ -12,6 +12,10 @@ cmp.setup({
 		{ name = 'path' },
 	},
 	mapping = {
+		['<C-y>'] = cmp.mapping.confirm({ select = true }),
+		['<C-e>'] = cmp.mapping.abort(),
+		['<C-u>'] = cmp.mapping.scroll_docs(-4),
+		['<C-d>'] = cmp.mapping.scroll_docs(4),
 		['<C-Space>'] = cmp.mapping.complete(),
 		['<C-f>'] = cmp_action.luasnip_jump_forward(),
 		['<C-b>'] = cmp_action.luasnip_jump_backward(),
