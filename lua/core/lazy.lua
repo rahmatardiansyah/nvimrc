@@ -61,13 +61,11 @@ require('lazy').setup({
 	},
 	{ 'mhartington/formatter.nvim' },
 	{ 'lervag/vimtex' },
-	{ 'hiphish/rainbow-delimiters.nvim' },
 	{
 		'kylechui/nvim-surround',
 		version = '*',
 		event = 'VeryLazy',
 	},
-	{ 'NvChad/nvim-colorizer.lua' },
 }, {
 	install = {
 		colorscheme = { 'onedark' },

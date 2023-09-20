@@ -10,8 +10,6 @@ require('plugins/telescope')
 require('plugins/harpoon')
 require('plugins/gitsign')
 require('plugins/comment')
-require('plugins/rainbow')
 require('plugins/surround')
-require('plugins/colorizer')
 
 require('lsp')
