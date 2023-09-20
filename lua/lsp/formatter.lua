@@ -20,6 +20,12 @@ require('formatter').setup({
 		javascriptreact = {
 			require('formatter.filetypes.javascriptreact').prettier,
 		},
+		typescript = {
+			require('formatter.filetypes.javascript').prettier,
+		},
+		typescriptreact = {
+			require('formatter.filetypes.javascriptreact').prettier,
+		},
 		nix = {
 			require('formatter.filetypes.nix').nixfmt,
 		},
