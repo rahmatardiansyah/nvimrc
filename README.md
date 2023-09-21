@@ -14,21 +14,26 @@
 * [trash-cli](https://github.com/andreafrancia/trash-cli)
 
 ### Fedora dnf
-```
-sudo dnf in neovim gcc-c++ tree-sitter-cli ripgrep fd-find
+```shell
+$ sudo dnf in neovim gcc-c++ tree-sitter-cli ripgrep fd-find
 ```
 
 ### Arch Linux / Pacman Package Manager
-```
-sudo pacman -S neovim xsel xclip tree-sitter ripgrep fd stylua lua-language-server trash-cli
+```shell
+$ sudo pacman -S neovim xsel xclip tree-sitter ripgrep fd stylua lua-language-server trash-cli
 ```
 
 ### NPM / package manager for Node.js
+```shell
+$ npm install -g typescript typescript-language-server prettier vscode-langservers-extracted emmet-ls
 ```
-npm install -g typescript typescript-language-server prettier vscode-langservers-extracted emmet-ls
+
+### Nix
+```shell
+$ nix-env -iA nixpkgs.nixfmt
 ```
 
 ### pip / package manager for python
-```
-pip install beautysh
+```shell
+$ pip install beautysh
 ```
