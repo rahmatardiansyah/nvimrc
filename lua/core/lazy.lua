@@ -68,6 +68,7 @@ require('lazy').setup({
 		version = '*',
 		event = 'VeryLazy',
 	},
+	{ 'ThePrimeagen/git-worktree.nvim' },
 }, {
 	install = {
 		colorscheme = { 'onedark' },

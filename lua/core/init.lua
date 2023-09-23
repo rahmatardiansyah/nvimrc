@@ -11,5 +11,6 @@ require('plugins/harpoon')
 require('plugins/gitsign')
 require('plugins/comment')
 require('plugins/surround')
+require('plugins/worktree')
 
 require('lsp')
