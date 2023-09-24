@@ -13,12 +13,6 @@ autocmd('TextYankPost', {
 	end,
 })
 
--- Remove whitespace on save
-autocmd('BufWritePre', {
-	pattern = '',
-	command = ':%s/\\s\\+$//e',
-})
-
 -- Don't auto commenting new lines
 autocmd('BufEnter', {
 	pattern = '',
