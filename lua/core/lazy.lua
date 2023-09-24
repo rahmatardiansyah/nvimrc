@@ -69,6 +69,7 @@ require('lazy').setup({
 		event = 'VeryLazy',
 	},
 	{ 'ThePrimeagen/git-worktree.nvim' },
+	{ 'ThePrimeagen/vim-be-good' },
 }, {
 	install = {
 		colorscheme = { 'onedark' },

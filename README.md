@@ -37,3 +37,7 @@ $ nix-env -iA nixpkgs.nixfmt
 ```shell
 $ pip install beautysh
 ```
+
+# Todo
+- [ ] add colorscheme
+- [ ] make some plugin lazy
