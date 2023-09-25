@@ -47,7 +47,7 @@ opt.synmaxcol = 240 -- Max column for syntax highlight
 opt.updatetime = 250 -- ms to wait for trigger an event
 opt.undodir = vim.fn.stdpath('data') .. '/undo'
 opt.undofile = true
-opt.shadafile = 'NONE' -- Remove mark 0-9
+-- opt.shadafile = 'NONE' -- Remove mark 0-9
 
 -----------------------------------------------------------
 -- Startup
