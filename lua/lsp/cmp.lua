@@ -25,3 +25,11 @@ cmp.setup({
 		documentation = cmp.config.window.bordered(),
 	},
 })
+
+cmp.setup.filetype({ 'markdown', 'tex' }, {
+	sources = cmp.config.sources({
+		{ name = 'dictionary', keyword_length = 2 },
+	}),
+})
+
+require('lsp/dictionary')

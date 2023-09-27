@@ -30,6 +30,17 @@ require('mason-lspconfig').setup({
 
 lsp.setup_servers({ 'tsserver', 'eslint', 'emmet_ls', 'cssls' })
 
+require('lspconfig').astro.setup({
+	cmd = { 'astro-ls', '--stdio' },
+	filetypes = { 'astro' },
+	init_options = {
+		typescript = {},
+	},
+	on_attach = function(client, bufnr)
+		print('Hello Astronot 🚀!')
+	end,
+})
+
 lsp.setup()
 
 require('lsp/cmp')

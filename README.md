@@ -25,7 +25,7 @@ $ sudo pacman -S neovim xsel xclip tree-sitter ripgrep fd stylua lua-language-se
 
 ### NPM / package manager for Node.js
 ```shell
-$ npm install -g typescript typescript-language-server prettier vscode-langservers-extracted emmet-ls
+$ npm install -g typescript typescript-language-server prettier vscode-langservers-extracted emmet-ls @astrojs/language-server prettier-plugin-astro
 ```
 
 ### Nix

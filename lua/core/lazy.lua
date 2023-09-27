@@ -70,6 +70,15 @@ require('lazy').setup({
 	},
 	{ 'ThePrimeagen/git-worktree.nvim' },
 	{ 'ThePrimeagen/vim-be-good' },
+	{ 'ggandor/leap.nvim' },
+	{
+		'iamcco/markdown-preview.nvim',
+		config = function()
+			vim.fn['mkdp#util#install']()
+		end,
+	},
+	{ 'uga-rosa/cmp-dictionary' },
+	{ 'rktjmp/paperplanes.nvim' },
 }, {
 	install = {
 		colorscheme = { 'onedark' },

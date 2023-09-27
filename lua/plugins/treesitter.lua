@@ -2,7 +2,7 @@
 -- Treesitter configuration file
 -----------------------------------------------------------
 require('nvim-treesitter.configs').setup({
-	ensure_installed = { 'lua', 'vim', 'nix', 'bash', 'html', 'css', 'javascript', 'markdown', 'c', 'latex' },
+	ensure_installed = { 'lua', 'vim', 'nix', 'bash', 'html', 'css', 'javascript', 'markdown', 'c', 'latex', 'astro' },
 	sync_install = false,
 	auto_install = true,
 	ignore_install = { 'yaml' },
