@@ -12,75 +12,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-	{
-		'olimorris/onedarkpro.nvim',
-		priority = 1000,
-	},
-	{
-		'nvim-treesitter/nvim-treesitter',
-		dependencies = {
-			'JoosepAlviste/nvim-ts-context-commentstring',
-		},
-	},
-	{
-		'nvim-telescope/telescope.nvim',
-		tag = '0.1.3',
-		dependencies = { 'nvim-lua/plenary.nvim' },
-	},
-	{
-		'ThePrimeagen/harpoon',
-		event = { 'BufReadPre', 'BufNewFile' },
-	},
-	{ 'lewis6991/gitsigns.nvim' },
-	{
-		'numToStr/Comment.nvim',
-		event = { 'BufReadPre', 'BufNewFile' },
-	},
-	{
-		'VonHeikemen/lsp-zero.nvim',
-		branch = 'v3.x',
-		dependencies = {
-			{ 'neovim/nvim-lspconfig' },
-			{ 'hrsh7th/nvim-cmp' },
-			{ 'hrsh7th/cmp-nvim-lsp' },
-			{ 'hrsh7th/cmp-buffer' }, -- Optional
-			{ 'hrsh7th/cmp-path' }, -- Optional
-			{ 'williamboman/mason.nvim' }, -- Optional
-			{ 'williamboman/mason-lspconfig.nvim' }, -- Optional
-			{
-				'L3MON4D3/LuaSnip',
-				dependencies = {
-					{ 'rafamadriz/friendly-snippets' },
-					{ 'saadparwaiz1/cmp_luasnip' },
-				},
-			},
-		},
-	},
-	{
-		'windwp/nvim-autopairs',
-		event = 'InsertEnter',
-		opts = {},
-	},
-	{ 'mhartington/formatter.nvim' },
-	{ 'lervag/vimtex' },
-	{
-		'kylechui/nvim-surround',
-		version = '*',
-		event = 'VeryLazy',
-	},
-	{ 'ThePrimeagen/git-worktree.nvim' },
-	{ 'ThePrimeagen/vim-be-good' },
-	{ 'ggandor/leap.nvim' },
-	{
-		'iamcco/markdown-preview.nvim',
-		config = function()
-			vim.fn['mkdp#util#install']()
-		end,
-	},
-	{ 'uga-rosa/cmp-dictionary' },
-	{ 'rktjmp/paperplanes.nvim' },
+	{ import = 'plugins' },
+	{ import = 'plugins.lsp' },
 }, {
 	install = {
 		colorscheme = { 'onedark' },
+	},
+	change_detection = {
+		notify = false,
 	},
 })

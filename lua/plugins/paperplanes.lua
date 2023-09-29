@@ -1,6 +1,11 @@
-require('paperplanes').setup({
-	register = '+',
-	provider = '0x0.st',
-	provider_options = {},
-	notifier = vim.notify or print,
-})
+return {
+	'rktjmp/paperplanes.nvim',
+	config = function()
+		require('paperplanes').setup({
+			register = '+',
+			provider = '0x0.st',
+			provider_options = {},
+			notifier = vim.notify or print,
+		})
+	end,
+}

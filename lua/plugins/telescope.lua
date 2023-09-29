@@ -1,27 +1,30 @@
------------------------------------------------------------
--- Telescope configuration file
------------------------------------------------------------
-local actions = require('telescope.actions')
-
-require('telescope').setup({
-	defaults = {
-		file_ignore_patterns = { '%.jpeg', '%.png', '%.jpg', 'node_modules/.*' },
-		layout_config = {
-			horizontal = {
-				width = 0.9,
-				preview_cutoff = 0,
-			},
-		},
-		mappings = {
-			i = {
-				['<esc><esc>'] = actions.close, -- Close telescope fast
+return {
+	'nvim-telescope/telescope.nvim',
+	tag = '0.1.3',
+	dependencies = { 'nvim-lua/plenary.nvim' },
+	opts = {
+		defaults = {
+			file_ignore_patterns = { '%.jpeg', '%.png', '%.jpg', 'node_modules/.*' },
+			layout_config = {
+				horizontal = {
+					width = 0.9,
+					preview_cutoff = 0,
+				},
 			},
 		},
 	},
-})
-
-local builtin = require('telescope.builtin')
-vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
-vim.keymap.set('n', '<leader>fs', function()
-	builtin.grep_string({ search = vim.fn.input('Grep > ') })
-end)
+	keys = {
+		{
+			'<leader>ff',
+			function()
+				require('telescope.builtin').find_files()
+			end,
+		},
+		{
+			'<leader>fs',
+			function()
+				require('telescope.builtin').grep_string({ search = vim.fn.input('Grep > ') })
+			end,
+		},
+	},
+}
