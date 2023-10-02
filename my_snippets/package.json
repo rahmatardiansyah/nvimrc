@@ -1,0 +1,26 @@
+{
+  "name": "custom-snippets",
+  "contributes": {
+    "snippets": [
+      {
+        "language": [
+          "all"
+        ],
+        "path": "./snippets/all.json"
+      },
+      {
+        "language": [
+          "sh"
+        ],
+        "path": "./snippets/bash.json"
+      },
+      {
+        "language": [
+          "javascript",
+          "javascriptreact"
+        ],
+        "path": "./snippets/javascript.json"
+      }
+    ]
+  }
+}

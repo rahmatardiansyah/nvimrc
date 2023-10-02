@@ -36,6 +36,7 @@ autocmd('Filetype', {
 })
 
 vim.cmd([[
+"" Change tilde keybind function
 function! TwiddleCase(str)
   if a:str ==# toupper(a:str)
     let result = tolower(a:str)

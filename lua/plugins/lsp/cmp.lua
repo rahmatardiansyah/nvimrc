@@ -2,9 +2,7 @@ return {
 	'hrsh7th/nvim-cmp',
 	event = 'InsertEnter',
 	dependencies = {
-		{ 'L3MON4D3/LuaSnip' },
 		{ 'saadparwaiz1/cmp_luasnip' },
-		{ 'rafamadriz/friendly-snippets' },
 		{ 'hrsh7th/cmp-buffer' },
 		{ 'hrsh7th/cmp-path' },
 		{ 'uga-rosa/cmp-dictionary' },
@@ -13,16 +11,13 @@ return {
 		local lsp_zero = require('lsp-zero')
 		lsp_zero.extend_cmp()
 
-		-- Load Snippet
-		require('luasnip.loaders.from_vscode').lazy_load()
-
 		local cmp = require('cmp')
 		local cmp_action = lsp_zero.cmp_action()
 
 		cmp.setup({
 			sources = {
-				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },
+				{ name = 'nvim_lsp' },
 				{ name = 'buffer' },
 				{ name = 'path' },
 			},
@@ -65,6 +60,9 @@ return {
 
 		cmp.setup.filetype({ 'markdown', 'tex' }, {
 			sources = cmp.config.sources({
+				{ name = 'luasnip' },
+				{ name = 'buffer' },
+				{ name = 'path' },
 				{ name = 'dictionary', keyword_length = 2 },
 			}),
 		})

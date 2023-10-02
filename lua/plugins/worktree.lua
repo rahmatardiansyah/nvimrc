@@ -7,10 +7,16 @@ return {
 
 		Worktree.on_tree_change(function(op, metadata)
 			if op == Worktree.Operations.Switch then
-				print('Switched to ' .. metadata.path)
+				local path_segments = {}
+				for segment in metadata.path:gmatch('[^/]+') do
+					table.insert(path_segments, segment)
+				end
+				local last_segment = path_segments[#path_segments]
+				print('Switched to ' .. last_segment)
 			end
 		end)
 	end,
+
 	keys = {
 		{
 			'<leader>ga',

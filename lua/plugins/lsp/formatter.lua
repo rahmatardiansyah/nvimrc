@@ -30,6 +30,9 @@ return {
 				typescriptreact = {
 					require('formatter.filetypes.javascriptreact').prettier,
 				},
+				json = {
+					require('formatter.filetypes.json').prettier,
+				},
 				nix = {
 					require('formatter.filetypes.nix').nixfmt,
 				},
