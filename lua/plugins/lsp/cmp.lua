@@ -6,6 +6,7 @@ return {
 		{ 'hrsh7th/cmp-buffer' },
 		{ 'hrsh7th/cmp-path' },
 		{ 'uga-rosa/cmp-dictionary' },
+		{ 'onsails/lspkind.nvim' },
 	},
 	config = function()
 		local lsp_zero = require('lsp-zero')
@@ -16,8 +17,8 @@ return {
 
 		cmp.setup({
 			sources = {
-				{ name = 'luasnip' },
 				{ name = 'nvim_lsp' },
+				{ name = 'luasnip' },
 				{ name = 'buffer' },
 				{ name = 'path' },
 			},
@@ -34,8 +35,26 @@ return {
 				completion = cmp.config.window.bordered(),
 				documentation = cmp.config.window.bordered(),
 			},
-			-- (Optional) Show source name in completion menu
-			formatting = lsp_zero.cmp_format(),
+			formatting = {
+				fields = { 'abbr', 'menu', 'kind' },
+				format = require('lspkind').cmp_format({
+					mode = 'symbol_text',
+					maxwidth = 50,
+					ellipsis_char = '...',
+					-- For Debugging - show source lsp client in cmp
+					-- before = function(entry, item)
+					-- 	if entry.source.name == 'nvim_lsp' then
+					-- 		item.menu = entry.source.source.client.name
+					-- 	elseif entry.source.name == 'buffer' then
+					-- 		item.menu = 'Buffer'
+					-- 	else
+					-- 		item.menu = entry.source.name
+					-- 	end
+					--
+					-- 	return item
+					-- end,
+				}),
+			},
 		})
 
 		local dict = require('cmp_dictionary')

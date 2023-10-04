@@ -89,6 +89,14 @@ return {
 				end,
 				opts,
 			},
+			-- Todo(Rahmat Ardiansyah): Memperbaiki workflow
+			-- {
+			-- 	'<A-f>',
+			-- 	function()
+			-- 		require('harpoon.tmux').sendCommand(1, '\n')
+			-- 	end,
+			-- 	opts,
+			-- },
 		},
 	},
 }

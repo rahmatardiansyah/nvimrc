@@ -25,7 +25,7 @@ return {
 			virtual_text = false,
 		})
 
-		lsp_zero.setup_servers({ 'tsserver', 'eslint', 'emmet_ls', 'cssls' })
+		lsp_zero.setup_servers({ 'tsserver', 'eslint', 'cssls' })
 
 		require('mason-lspconfig').setup({
 			ensure_installed = {},
