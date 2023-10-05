@@ -40,7 +40,31 @@ return {
 					require('formatter.filetypes.latex').latexindent,
 				},
 				['scss'] = {
-					require('formatter.filetypes.css').prettier,
+					function(parser)
+						if not parser then
+							return {
+								exe = 'prettier',
+								args = {
+									'--stdin-filepath',
+									util.escape_path(util.get_current_buffer_file_path()),
+								},
+								stdin = true,
+								try_node_modules = true,
+							}
+						end
+
+						return {
+							exe = 'prettier',
+							args = {
+								'--stdin-filepath',
+								util.escape_path(util.get_current_buffer_file_path()),
+								'--parser',
+								parser,
+							},
+							stdin = true,
+							try_node_modules = true,
+						}
+					end,
 				},
 				['astro'] = {
 					function()
