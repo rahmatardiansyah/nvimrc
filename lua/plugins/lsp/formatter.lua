@@ -7,7 +7,7 @@ return {
 
 		require('formatter').setup({
 			logging = true,
-			log_level = vim.log.levels.WARN,
+			log_level = vim.log.levels.WARN, -- WARN / DEBUG
 			filetype = {
 				lua = {
 					require('formatter.filetypes.lua').stylua,
@@ -80,6 +80,12 @@ return {
 							try_node_modules = true,
 						}
 					end,
+				},
+				markdown = {
+					require('formatter.filetypes.markdown').prettier,
+				},
+				['telekasten'] = {
+					require('formatter.filetypes.markdown').prettier,
 				},
 				['*'] = {
 					require('formatter.filetypes.any').remove_trailing_whitespace,

@@ -16,6 +16,12 @@
       },
       {
         "language": [
+          "telekasten"
+        ],
+        "path": "./snippets/telekasten.json"
+      },
+      {
+        "language": [
           "javascript",
           "javascriptreact"
         ],

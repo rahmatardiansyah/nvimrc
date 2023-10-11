@@ -9,6 +9,11 @@ return {
 		require('luasnip.loaders.from_vscode').load({ paths = './my_snippets' })
 		require('luasnip.loaders.from_lua').load({ paths = './my_snippets/luasnip' })
 
+		-- load telekasten, then markdown, then all.
+		ls.filetype_extend('telekasten', { 'markdown' })
+		-- load markdown, then all (no telekasten).
+		-- ls.filetype_set('telekasten', { 'markdown' })
+
 		vim.api.nvim_create_user_command('LuaSnipEdit', function()
 			require('luasnip.loaders').edit_snippet_files()
 		end, { desc = 'Edit Custom Snippets' })

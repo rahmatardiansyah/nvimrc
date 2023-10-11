@@ -11,6 +11,7 @@ return {
 
 			require('harpoon').setup({
 				tabline = true,
+				enter_on_sendcmd = true,
 				menu = {
 					width = vim.api.nvim_win_get_width(0) - 20,
 				},
@@ -89,14 +90,14 @@ return {
 				end,
 				opts,
 			},
-			-- Todo(Rahmat Ardiansyah): Memperbaiki workflow
-			-- {
-			-- 	'<A-f>',
-			-- 	function()
-			-- 		require('harpoon.tmux').sendCommand(1, '\n')
-			-- 	end,
-			-- 	opts,
-			-- },
+			{
+				'<A-f>',
+				function()
+					require('harpoon.tmux').gotoTerminal(1)
+					require('harpoon.tmux').sendCommand(1, 'tmux-sessionizer.sh\n')
+				end,
+				opts,
+			},
 		},
 	},
 }

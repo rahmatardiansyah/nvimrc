@@ -7,6 +7,7 @@ return {
 				CursorLine = { bg = 'NONE' },
 				CursorLineNr = { fg = '#61AFEF' },
 				IncSearch = { bg = '#61AFEF', fg = '#282c34' },
+				['@text.todo.unchecked'] = { fg = '#e06c75' },
 			},
 			options = {
 				cursorline = true,

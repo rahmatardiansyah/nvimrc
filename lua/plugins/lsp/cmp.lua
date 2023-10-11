@@ -19,6 +19,7 @@ return {
 			sources = {
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },
+				{ name = 'copilot' },
 				{ name = 'buffer' },
 				{ name = 'path' },
 			},
@@ -38,6 +39,9 @@ return {
 			formatting = {
 				fields = { 'abbr', 'menu', 'kind' },
 				format = require('lspkind').cmp_format({
+					symbol_map = {
+						Copilot = '',
+					},
 					mode = 'symbol_text',
 					maxwidth = 50,
 					ellipsis_char = '...',
@@ -77,8 +81,9 @@ return {
 			},
 		})
 
-		cmp.setup.filetype({ 'markdown', 'tex' }, {
+		cmp.setup.filetype({ 'markdown', 'tex', 'telekasten' }, {
 			sources = cmp.config.sources({
+				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },
 				{ name = 'buffer' },
 				{ name = 'path' },
