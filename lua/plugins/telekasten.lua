@@ -1,7 +1,7 @@
 local home = vim.fn.expand('~/zet')
 
 return {
-	enabled = true,
+	enabled = false,
 	'renerocksai/telekasten.nvim',
 	dependencies = {
 		'nvim-telescope/telescope.nvim',

@@ -12,6 +12,7 @@ return {
 				'css',
 				'javascript',
 				'markdown',
+				'markdown_inline',
 				'c',
 				'latex',
 				'astro',
@@ -21,7 +22,7 @@ return {
 			ignore_install = {},
 			highlight = {
 				enable = true,
-				additional_vim_regex_highlighting = false,
+				additional_vim_regex_highlighting = { 'markdown' },
 			},
 			context_commentstring = {
 				enable = true,
