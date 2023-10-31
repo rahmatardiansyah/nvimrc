@@ -1,4 +1,5 @@
 return {
+	enabled = false,
 	dir = '~/Documents/project/zet.nvim',
 	config = function()
 		require('zet').setup({

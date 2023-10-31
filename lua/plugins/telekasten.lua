@@ -15,7 +15,7 @@ return {
 			dailies = home .. '/' .. 'daily',
 			weeklies = home .. '/' .. 'weekly',
 			templates = home .. '/' .. 'templates',
-			image_subdir = 'images',
+			image_subdir = 'attachment',
 			extension = '.md',
 			follow_creates_nonexisting = true,
 			dailies_create_nonexisting = true,

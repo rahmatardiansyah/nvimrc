@@ -10,6 +10,7 @@ return {
 				'bash',
 				'html',
 				'css',
+				'scss',
 				'javascript',
 				'markdown',
 				'markdown_inline',
