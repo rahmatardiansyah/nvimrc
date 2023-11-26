@@ -1,4 +1,5 @@
 return {
+  enabled = false,
 	'nvim-telescope/telescope-bibtex.nvim',
 	requires = {
 		{ 'nvim-telescope/telescope.nvim' },

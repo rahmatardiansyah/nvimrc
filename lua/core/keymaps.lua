@@ -33,3 +33,6 @@ map('n', 'N', 'Nzzzv')
 map('n', '<esc><esc>', ':nohl<CR>')
 
 map('v', '<leader>p', '"_dP')
+
+-- Disipline
+require('utils.init').cowboy()

@@ -25,10 +25,10 @@ return {
 					require('formatter.filetypes.javascriptreact').prettier,
 				},
 				typescript = {
-					require('formatter.filetypes.javascript').prettier,
+					require('formatter.filetypes.typescript').prettier,
 				},
 				typescriptreact = {
-					require('formatter.filetypes.javascriptreact').prettier,
+					require('formatter.filetypes.typescriptreact').prettier,
 				},
 				json = {
 					require('formatter.filetypes.json').prettier,
@@ -38,6 +38,9 @@ return {
 				},
 				tex = {
 					require('formatter.filetypes.latex').latexindent,
+				},
+				sh = {
+					require('formatter.filetypes.sh').shfmt,
 				},
 				['scss'] = {
 					function(parser)

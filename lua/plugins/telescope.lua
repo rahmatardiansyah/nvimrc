@@ -15,23 +15,6 @@ return {
 					},
 				},
 			},
-			extensions = {
-				bibtex = {
-					depth = 1,
-					custom_formats = {},
-					format = '',
-					global_files = {
-						vim.fn.expand('~') .. '/Documents/bib/daftar-pustaka.bib',
-					},
-					search_keys = { 'author', 'year', 'title' },
-					citation_format = '{{author}} ({{year}}), {{title}}.',
-					citation_trim_firstname = true,
-					citation_max_auth = 2,
-					context = false,
-					context_fallback = true,
-					wrap = false,
-				},
-			},
 		})
 	end,
 	keys = {

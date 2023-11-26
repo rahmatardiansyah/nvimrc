@@ -1,4 +1,3 @@
-local opts = { silent = true }
 return {
 	'iamcco/markdown-preview.nvim',
 	cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },

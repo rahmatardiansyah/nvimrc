@@ -55,3 +55,4 @@ opt.undofile = true
 opt.shortmess:append('sI') -- Disable nvim intro
 g.netrw_banner = 1 -- Hide banner (Bug if is off)
 g.editorconfig = true -- check .editorconfig file
+g.netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
