@@ -15,7 +15,5 @@ return {
 				terminal_colors = true,
 			},
 		})
-
-		-- vim.cmd('colorscheme onedark')
 	end,
 }

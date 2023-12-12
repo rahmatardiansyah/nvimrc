@@ -27,16 +27,38 @@ return {
 			---@param highlights Highlights
 			---@param colors ColorScheme
 			on_highlights = function(hl, c)
-				hl.TelescopeSelection = { bg = '#002B36', fg = '#9EACAD' }
-				hl.TelescopePromptTitle = {
-					fg = '#9EACAD',
-				}
-				hl.Search = { fg = '#2AA198', reverse = true }
-				hl.IncSearch = { fg = '#268BD2', standout = true }
+				hl.Search = { fg = c.cyan500, reverse = true }
+				hl.IncSearch = { fg = c.blue500, standout = true }
 				hl.Visual = { fg = c.bg, bg = c.fg, reverse = false }
+
+				hl.TelescopeSelection = { fg = c.base1, bg = c.bg_highlight }
+				hl.TelescopePromptTitle = { fg = c.base1 }
+
+				-- markdown
+				hl.markdownCode = { bg = nil }
+				hl['@text.literal.markdown_inline'] = { fg = c.blue500, bg = nil, bold = false }
+				hl['@punctuation.delimiter'] = { fg = c.orange500, bg = nil, bold = true }
+				hl.markdownCodeBlock = { bg = nil }
+				hl['@text.literal.block'] = { fg = c.blue500 }
+				hl.markdownLinkText = { fg = c.blue500, underline = false }
+				hl['@text.reference'] = { fg = c.blue500, underline = false }
+
+				hl['@text.title.1.marker'] = { fg = c.orange300, bg = nil, bold = true }
+				hl['@text.title.2.marker'] = { fg = c.orange300, bg = nil, bold = true }
+				hl['@text.title.3.marker'] = { fg = c.orange500, bg = nil, bold = true }
+				hl['@text.title.4.marker'] = { fg = c.orange500, bg = nil, bold = true }
+				hl['@text.title.5.marker'] = { fg = c.orange700, bg = nil, bold = false }
+				hl['@text.title.6.marker'] = { fg = c.orange700, bg = nil, bold = false }
+				hl['@text.title.1'] = { fg = c.blue300, bg = nil, bold = true }
+				hl['@text.title.2'] = { fg = c.blue300, bg = nil, bold = true }
+				hl['@text.title.3'] = { fg = c.blue500, bg = nil, bold = true }
+				hl['@text.title.4'] = { fg = c.blue500, bg = nil, bold = true }
+				hl['@text.title.5'] = { fg = c.blue700, bg = nil, bold = false }
+				hl['@text.title.6'] = { fg = c.blue700, bg = nil, bold = false }
+
+				hl.DiffAdd = { fg = c.green500, bg = nil, bold = false }
+				hl.DiffDelete = { fg = c.red500, bg = nil, bold = false }
 			end,
 		})
-
-		vim.cmd([[colorscheme solarized-osaka]])
 	end,
 }

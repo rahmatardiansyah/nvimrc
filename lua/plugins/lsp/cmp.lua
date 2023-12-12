@@ -17,8 +17,8 @@ return {
 
 		cmp.setup({
 			sources = {
-				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },
+				{ name = 'nvim_lsp' },
 				{ name = 'copilot' },
 				{ name = 'buffer' },
 				{ name = 'path' },
@@ -46,18 +46,21 @@ return {
 					maxwidth = 50,
 					ellipsis_char = '...',
 					-- For Debugging - show source lsp client in cmp
-					-- before = function(entry, item)
-					-- 	if entry.source.name == 'nvim_lsp' then
-					-- 		item.menu = entry.source.source.client.name
-					-- 	elseif entry.source.name == 'buffer' then
-					-- 		item.menu = 'Buffer'
-					-- 	else
-					-- 		item.menu = entry.source.name
-					-- 	end
-					--
-					-- 	return item
-					-- end,
+					before = function(entry, item)
+						if entry.source.name == 'nvim_lsp' then
+							item.menu = entry.source.source.client.name
+						elseif entry.source.name == 'buffer' then
+							item.menu = 'Buffer'
+						else
+							item.menu = entry.source.name
+						end
+
+						return item
+					end,
 				}),
+			},
+			experimental = {
+				ghost_text = true,
 			},
 		})
 
@@ -71,7 +74,7 @@ return {
 			sqlite = false,
 			max_items = -1,
 			capacity = 5,
-			debug = false,
+			debug = true,
 		})
 
 		dict.switcher({
@@ -81,7 +84,7 @@ return {
 			},
 		})
 
-		cmp.setup.filetype({ 'markdown', 'tex', 'telekasten' }, {
+		cmp.setup.filetype({ 'markdown', 'tex' }, {
 			sources = cmp.config.sources({
 				{ name = 'nvim_lsp' },
 				{ name = 'luasnip' },

@@ -87,9 +87,6 @@ return {
 				markdown = {
 					require('formatter.filetypes.markdown').prettier,
 				},
-				['telekasten'] = {
-					require('formatter.filetypes.markdown').prettier,
-				},
 				['*'] = {
 					require('formatter.filetypes.any').remove_trailing_whitespace,
 				},
