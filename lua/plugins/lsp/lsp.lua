@@ -25,10 +25,10 @@ return {
 			virtual_text = false,
 		})
 
-		lsp_zero.setup_servers({ 'tsserver', 'eslint', 'cssls' })
+		lsp_zero.setup_servers({ 'lua_ls', 'tsserver', 'astro', 'emmet_language_server', 'eslint', 'cssls' })
 
 		require('mason-lspconfig').setup({
-			ensure_installed = {},
+			ensure_installed = { 'lua_ls', 'tsserver', 'astro', 'emmet_language_server', 'eslint', 'cssls' },
 			handlers = {
 				lsp_zero.default_setup,
 				lua_ls = function()
@@ -38,7 +38,9 @@ return {
 			},
 		})
 
-		require('lspconfig').astro.setup({
+		local lspconfig = require('lspconfig')
+
+		lspconfig.astro.setup({
 			cmd = { 'astro-ls', '--stdio' },
 			filetypes = { 'astro' },
 			init_options = {
