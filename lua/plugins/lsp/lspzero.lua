@@ -1,4 +1,5 @@
 return {
+	enabled = true,
 	'VonHeikemen/lsp-zero.nvim',
 	branch = 'v3.x',
 	lazy = true,

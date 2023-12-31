@@ -1,4 +1,5 @@
 return {
+	enabled = true,
 	'kylechui/nvim-surround',
 	version = '*',
 	event = 'VeryLazy',

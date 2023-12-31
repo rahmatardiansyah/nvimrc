@@ -26,38 +26,6 @@ local fmt = require('luasnip.extras.fmt').fmt
 -- local ms = ls.multi_snippet
 -- local k = require('luasnip.nodes.key_indexer').new_key}}}
 
-local myutil = require('utils')
-
 return {
 	s('testsnippetfromluaall', t('this is snippet from lua ALL')),
-	s(
-		'pwgen16',
-		f(function()
-			return myutil.capture('pwgen -s 16 -1')
-		end)
-	),
-	s(
-		'pwgen32',
-		f(function()
-			return myutil.capture('pwgen -s 32 -1')
-		end)
-	),
-	s(
-		'fixme',
-		fmt('FIXME({}): {}', {
-			f(function()
-				return myutil.capture('git config user.name')
-			end),
-			i(1, 'Summary'),
-		})
-	),
-	s(
-		'todo',
-		fmt('Todo({}): {}', {
-			f(function()
-				return myutil.capture('git config user.name')
-			end),
-			i(1, 'Todo'),
-		})
-	),
 }

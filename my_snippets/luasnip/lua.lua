@@ -26,14 +26,6 @@ local f = ls.function_node
 -- local ms = ls.multi_snippet
 -- local k = require('luasnip.nodes.key_indexer').new_key -- }}}
 
-local myutil = require('utils')
-
 return {
 	s('testsnippetfromlualua', t('this is snippet from lua LUA')),
-	s(
-		'testsnippetfromlualuafucn',
-		f(function()
-			return myutil.capture('ls')
-		end)
-	),
 }

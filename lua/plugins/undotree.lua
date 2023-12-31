@@ -1,5 +1,6 @@
 local opts = { silent = true }
 return {
+	enabled = true,
 	'mbbill/undotree',
 	config = function()
 		vim.g.undotree_WindowLayout = 3

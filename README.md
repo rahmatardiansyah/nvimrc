@@ -17,7 +17,7 @@
 ### Fedora dnf
 
 ```shell
-$ sudo dnf install neovim gcc-c++ tree-sitter-cli ripgrep fd-find
+$ sudo dnf install neovim gcc-c++ tree-sitter-cli ripgrep fd-find trash-cli
 ```
 
 ### Arch Linux / Pacman Package Manager
@@ -38,11 +38,12 @@ $ npm install -g typescript typescript-language-server prettier vscode-langserve
 $ nix-env -iA nixpkgs.nixfmt
 ```
 
-### pip / package manager for python
+### Mason
 
-```shell
-$ pip install beautysh
-```
+- stylua
+- shfmt
+- lua-language-server
+- latexindent
 
 ### Generate Dictionary
 

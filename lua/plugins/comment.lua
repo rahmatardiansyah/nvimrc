@@ -1,4 +1,5 @@
 return {
+	enabled = true,
 	'numToStr/Comment.nvim',
 	event = { 'BufReadPre', 'BufNewFile' },
 	dependencies = {

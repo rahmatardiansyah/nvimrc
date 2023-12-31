@@ -1,4 +1,5 @@
 return {
+	enabled = true,
 	'neovim/nvim-lspconfig',
 	cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
 	event = { 'BufReadPre', 'BufNewFile' },
@@ -25,10 +26,10 @@ return {
 			virtual_text = false,
 		})
 
-		lsp_zero.setup_servers({ 'lua_ls', 'tsserver', 'astro', 'emmet_language_server', 'eslint', 'cssls' })
+		lsp_zero.setup_servers({})
 
 		require('mason-lspconfig').setup({
-			ensure_installed = { 'lua_ls', 'tsserver', 'astro', 'emmet_language_server', 'eslint', 'cssls' },
+			ensure_installed = { 'lua_ls' },
 			handlers = {
 				lsp_zero.default_setup,
 				lua_ls = function()
@@ -40,15 +41,10 @@ return {
 
 		local lspconfig = require('lspconfig')
 
-		lspconfig.astro.setup({
-			cmd = { 'astro-ls', '--stdio' },
-			filetypes = { 'astro' },
-			init_options = {
-				typescript = {},
-			},
-			on_attach = function(client, bufnr)
-				print('Hello Astronot 🚀!')
-			end,
-		})
+		lspconfig.lua_ls.setup({})
+		lspconfig.tsserver.setup({})
+		lspconfig.emmet_language_server.setup({})
+		lspconfig.cssls.setup({})
+		lspconfig.astro.setup({})
 	end,
 }

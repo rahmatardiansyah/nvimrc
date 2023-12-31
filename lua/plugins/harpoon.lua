@@ -1,96 +1,48 @@
-local opts = { silent = true }
 return {
 	{
+		enabled = true,
 		'ThePrimeagen/harpoon',
+		branch = 'harpoon2',
 		config = function()
-			-- solarized-osaka dark
-			vim.cmd('highlight! HarpoonInactive guibg=NONE guifg=#586E75')
-			vim.cmd('highlight! HarpoonActive guibg=NONE guifg=#EEE8D5')
-			vim.cmd('highlight! HarpoonNumberActive guibg=NONE guifg=#268BD2')
-			vim.cmd('highlight! HarpoonNumberInactive guibg=NONE guifg=#586e75')
-			vim.cmd('highlight! TabLineFill guibg=NONE guifg=white')
+			local harpoon = require('harpoon')
+			harpoon:setup({ settings = {
+				key = function()
+					return vim.loop.cwd()
+				end,
+			} })
 
-			require('harpoon').setup({
-				tabline = true,
-				enter_on_sendcmd = true,
-				menu = {
-					width = vim.api.nvim_win_get_width(0) - 20,
-				},
+			vim.keymap.set('n', '<leader>a', function()
+				harpoon:list():append()
+			end)
+
+			vim.keymap.set('n', '<leader>e', function()
+				harpoon.ui:toggle_quick_menu(harpoon:list())
+			end)
+
+			vim.keymap.set('n', '<A-h>', function()
+				harpoon:list():select(1)
+			end)
+			vim.keymap.set('n', '<A-j>', function()
+				harpoon:list():select(2)
+			end)
+			vim.keymap.set('n', '<A-k>', function()
+				harpoon:list():select(3)
+			end)
+			vim.keymap.set('n', '<A-l>', function()
+				harpoon:list():select(4)
+			end)
+
+			harpoon:extend({
+				UI_CREATE = function(cx)
+					vim.keymap.set('n', '<C-v>', function()
+						harpoon.ui:select_menu_item({ vsplit = true })
+					end, { buffer = cx.bufnr })
+
+					vim.keymap.set('n', '<C-x>', function()
+						harpoon.ui:select_menu_item({ split = true })
+					end, { buffer = cx.bufnr })
+				end,
 			})
 		end,
-		keys = {
-			{
-				'<leader>a',
-				function()
-					require('harpoon.mark').add_file()
-				end,
-				desc = 'Add harpoon mark',
-				opts,
-			},
-			{
-				'<leader>e',
-				function()
-					require('harpoon.ui').toggle_quick_menu()
-				end,
-				desc = 'Harpoon toogle quick menu',
-				opts,
-			},
-			{
-				'<A-h>',
-				function()
-					require('harpoon.ui').nav_file(1)
-				end,
-				opts,
-			},
-			{
-				'<A-j>',
-				function()
-					require('harpoon.ui').nav_file(2)
-				end,
-				opts,
-			},
-			{
-				'<A-k>',
-				function()
-					require('harpoon.ui').nav_file(3)
-				end,
-				opts,
-			},
-			{
-				'<A-l>',
-				function()
-					require('harpoon.ui').nav_file(4)
-				end,
-				opts,
-			},
-			{
-				'<A-H>',
-				function()
-					require('harpoon.ui').nav_file(5)
-				end,
-				opts,
-			},
-			{
-				'<A-J>',
-				function()
-					require('harpoon.ui').nav_file(6)
-				end,
-				opts,
-			},
-			{
-				'<A-K>',
-				function()
-					require('harpoon.ui').nav_file(7)
-				end,
-				opts,
-			},
-			{
-				'<A-L>',
-				function()
-					require('harpoon.ui').nav_file(8)
-				end,
-				opts,
-			},
-		},
 	},
 }

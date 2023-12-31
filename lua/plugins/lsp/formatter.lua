@@ -1,4 +1,5 @@
 return {
+  enabled = false,
 	'mhartington/formatter.nvim',
 	event = 'BufWritePost',
 	config = function()
