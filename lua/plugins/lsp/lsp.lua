@@ -46,5 +46,6 @@ return {
 		lspconfig.emmet_language_server.setup({})
 		lspconfig.cssls.setup({})
 		lspconfig.astro.setup({})
+		lspconfig.tailwindcss.setup({})
 	end,
 }

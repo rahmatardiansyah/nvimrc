@@ -29,7 +29,7 @@ $ sudo pacman -S neovim xsel xclip tree-sitter ripgrep fd stylua lua-language-se
 ### NPM / package manager for Node.js
 
 ```shell
-$ npm install -g typescript typescript-language-server prettier vscode-langservers-extracted @olrtg/emmet-language-server @astrojs/language-server prettier-plugin-astro
+$ npm install -g typescript typescript-language-server prettier vscode-langservers-extracted @olrtg/emmet-language-server @astrojs/language-server prettier-plugin-astro @tailwindcss/language-server
 ```
 
 ### Nix
