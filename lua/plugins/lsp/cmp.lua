@@ -46,15 +46,29 @@ return {
 					mode = 'symbol_text',
 					maxwidth = 50,
 					ellipsis_char = '...',
-					-- For Debugging - show source lsp client in cmp
 					before = function(entry, item)
-						if entry.source.name == 'nvim_lsp' then
-							item.menu = entry.source.source.client.name
-						elseif entry.source.name == 'buffer' then
-							item.menu = 'Buffer'
-						else
-							item.menu = entry.source.name
+						if item.kind == 'Color' and entry.completion_item.documentation then
+							local _, _, r, g, b = string.find(entry.completion_item.documentation, '^rgb%((%d+), (%d+), (%d+)')
+							if r then
+								local color = string.format('%02x', r) .. string.format('%02x', g) .. string.format('%02x', b)
+								local group = 'Tw_' .. color
+								if vim.fn.hlID(group) < 1 then
+									vim.api.nvim_set_hl(0, group, { fg = '#' .. color })
+								end
+								item.kind = '■' -- or "⬤" or anything
+								item.kind_hl_group = group
+								return item
+							end
 						end
+
+						-- For Debugging - show source lsp client in cmp
+						-- if entry.source.name == 'nvim_lsp' then
+						-- 	item.menu = entry.source.source.client.name
+						-- elseif entry.source.name == 'buffer' then
+						-- 	item.menu = 'Buffer'
+						-- else
+						-- 	item.menu = entry.source.name
+						-- end
 
 						return item
 					end,
