@@ -1,5 +1,5 @@
 return {
-	enable = true,
+	enabled = true,
 	'mfussenegger/nvim-lint',
 	event = { 'BufWritePre', 'BufNewFile' },
 	config = function()
