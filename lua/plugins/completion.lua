@@ -3,11 +3,14 @@ return {
 	'hrsh7th/nvim-cmp',
 	event = 'InsertEnter',
 	dependencies = {
-		{ 'saadparwaiz1/cmp_luasnip' },
+		{ 'hrsh7th/cmp-nvim-lsp' },
 		{ 'hrsh7th/cmp-buffer' },
 		{ 'hrsh7th/cmp-path' },
+		{ 'saadparwaiz1/cmp_luasnip' },
 		{ 'uga-rosa/cmp-dictionary' },
 		{ 'onsails/lspkind.nvim' },
+		{ 'zbirenbaum/copilot-cmp' },
+		{ 'roobert/tailwindcss-colorizer-cmp.nvim' },
 	},
 	config = function()
 		local lsp_zero = require('lsp-zero')
@@ -55,7 +58,7 @@ return {
 								if vim.fn.hlID(group) < 1 then
 									vim.api.nvim_set_hl(0, group, { fg = '#' .. color })
 								end
-								item.kind = '■' -- or "⬤" or anything
+								item.kind = '■'
 								item.kind_hl_group = group
 								return item
 							end
@@ -97,6 +100,12 @@ return {
 				en = '~/.local/share/nvim/dictionary/english.dict',
 				id = '~/.local/share/nvim/dictionary/indonesian.dict',
 			},
+		})
+
+		require('copilot_cmp').setup()
+
+		require('tailwindcss-colorizer-cmp').setup({
+			color_square_width = 1,
 		})
 
 		cmp.setup.filetype({ 'markdown', 'tex' }, {
