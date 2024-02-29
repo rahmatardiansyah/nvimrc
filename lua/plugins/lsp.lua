@@ -51,10 +51,33 @@ return {
 
 		local lspconfig = require('lspconfig')
 
-		lspconfig.lua_ls.setup({})
+		lspconfig.lua_ls.setup({
+			settings = {
+				Lua = {
+					diagnostics = {
+						globals = {
+							'vim',
+						},
+					},
+				},
+			},
+		})
+
 		lspconfig.tsserver.setup({})
 		lspconfig.emmet_language_server.setup({})
-		lspconfig.cssls.setup({})
+		lspconfig.cssls.setup({
+			settings = {
+				css = { validate = true, lint = {
+					unknownAtRules = 'ignore',
+				} },
+				scss = { validate = true, lint = {
+					unknownAtRules = 'ignore',
+				} },
+				less = { validate = true, lint = {
+					unknownAtRules = 'ignore',
+				} },
+			},
+		})
 		lspconfig.astro.setup({})
 		lspconfig.tailwindcss.setup({})
 	end,

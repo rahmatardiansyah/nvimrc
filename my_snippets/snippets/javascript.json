@@ -1,7 +1,0 @@
-{
-  "consoleLog": {
-    "prefix": ["log", "console"],
-    "body": ["console.log(${1:first})"],
-    "description": "Displays a message in the console"
-  }
-}

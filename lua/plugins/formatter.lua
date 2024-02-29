@@ -18,9 +18,12 @@ return {
 				css = { 'prettier' },
 				scss = { 'prettier' },
 				javascript = { 'prettier' },
+				json = { 'prettier' },
+				jsonc = { 'prettier' },
 				typescript = { 'prettier' },
 				javascriptreact = { 'prettier' },
 				typescriptreact = { 'prettier' },
+				['markdown.mdx'] = { 'prettier' },
 				['_'] = { 'trim_whitespace' },
 			},
 			formatters = {

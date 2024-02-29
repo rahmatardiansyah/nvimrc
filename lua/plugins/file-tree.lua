@@ -5,6 +5,16 @@ return {
 		'nvim-tree/nvim-web-devicons',
 	},
 	config = function()
+		require('nvim-web-devicons').setup({
+			override_by_filename = {
+				['.gitignore'] = {
+					icon = '',
+					color = '#db5761',
+					name = 'Gitignore',
+				},
+			},
+		})
+
 		vim.g.loaded_netrw = 1
 		vim.g.loaded_netrwPlugin = 1
 
@@ -21,6 +31,7 @@ return {
 			-- custom mappings
 			vim.keymap.set('n', 'd', api.fs.trash, opts('Trash'))
 			vim.keymap.set('n', 'D', api.fs.remove, opts('Delete'))
+			vim.keymap.set('n', '<esc><esc>', api.tree.close, opts('Delete'))
 		end
 
 		require('nvim-tree').setup({

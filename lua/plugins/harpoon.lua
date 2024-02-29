@@ -5,11 +5,8 @@ return {
 		branch = 'harpoon2',
 		config = function()
 			local harpoon = require('harpoon')
-			harpoon:setup({ settings = {
-				key = function()
-					return vim.loop.cwd()
-				end,
-			} })
+
+			harpoon:setup({})
 
 			vim.keymap.set('n', '<leader>a', function()
 				harpoon:list():append()
