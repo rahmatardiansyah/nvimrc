@@ -29,7 +29,7 @@ $ sudo pacman -S neovim xsel xclip tree-sitter ripgrep fd stylua lua-language-se
 ### NPM / package manager for Node.js
 
 ```shell
-$ npm install -g typescript typescript-language-server prettier vscode-langservers-extracted @olrtg/emmet-language-server @astrojs/language-server prettier-plugin-astro @tailwindcss/language-server
+$ npm install -g typescript typescript-language-server prettier vscode-langservers-extracted @olrtg/emmet-language-server @astrojs/language-server prettier-plugin-astro @tailwindcss/language-server eslint_d
 ```
 
 ### Nix
@@ -44,16 +44,6 @@ $ nix-env -iA nixpkgs.nixfmt
 - shfmt
 - lua-language-server
 - latexindent
-
-### Generate Dictionary
-
-```shell
-$ sudo apt install aspell aspell-en aspell-id # ubuntu
-$ sudo dnf install aspell aspell-en aspell-id # fedora
-$ mkdir ~/.local/share/nvim/dictionary
-$ aspell -d en dump master | aspell -l en expand > ~/.local/share/nvim/dictionary/english.dict
-$ aspell -d id dump master | aspell -l id expand > ~/.local/share/nvim/dictionary/indonesian.dict
-```
 
 # Todo
 
