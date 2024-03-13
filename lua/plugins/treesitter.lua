@@ -21,6 +21,8 @@ return {
 				'c',
 				'latex',
 				'astro',
+				'jsdoc',
+				'typescript',
 			},
 			sync_install = false,
 			auto_install = true,
