@@ -6,7 +6,8 @@ return {
 		'nvim-lua/plenary.nvim',
 	},
 	config = function()
-		require('telescope').setup({
+		local telescope = require('telescope')
+		telescope.setup({
 			defaults = {
 				file_ignore_patterns = { '%.jpeg', '%.png', '%.jpg', 'node_modules/.*' },
 				layout_config = {

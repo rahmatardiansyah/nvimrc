@@ -8,12 +8,20 @@ return {
 
 			harpoon:setup({})
 
+			local Path = require('plenary.path')
+			local function normalize_path(buf_name, root)
+				return Path:new(buf_name):make_relative(root)
+			end
+
 			vim.keymap.set('n', '<leader>a', function()
 				harpoon:list():append()
 			end)
 
 			vim.keymap.set('n', '<leader>e', function()
+				local curr_file = normalize_path(vim.api.nvim_buf_get_name(0), vim.loop.cwd())
 				harpoon.ui:toggle_quick_menu(harpoon:list())
+				local cmd = string.format("call search('%s')", curr_file)
+				vim.cmd(cmd)
 			end)
 
 			vim.keymap.set('n', '<A-h>', function()

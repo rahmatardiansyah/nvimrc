@@ -17,4 +17,7 @@ require('lazy').setup({
 	change_detection = {
 		notify = false,
 	},
+	install = {
+		colorscheme = { 'onedark' },
+	},
 })
