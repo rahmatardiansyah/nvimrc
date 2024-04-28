@@ -23,6 +23,12 @@
           "typescriptreact"
         ],
         "path": "./javascriptreact.json"
+      },
+      {
+        "language": [
+          "markdown"
+        ],
+        "path": "./markdown.json"
       }
     ]
   }

@@ -1,5 +1,5 @@
 return {
-	enabled = true,
+	enabled = false,
 	'stevearc/conform.nvim',
 	event = { 'BufWritePre' },
 	cmd = { 'ConformInfo' },
@@ -25,12 +25,6 @@ return {
 				typescriptreact = { 'prettier' },
 				['markdown.mdx'] = { 'prettier' },
 				['_'] = { 'trim_whitespace' },
-			},
-			formatters = {
-				['astro'] = {
-					command = 'prettier',
-					args = { '--stdin-filepath', '$FILENAME', '--plugin', 'prettier-plugin-astro' },
-				},
 			},
 		})
 	end,
