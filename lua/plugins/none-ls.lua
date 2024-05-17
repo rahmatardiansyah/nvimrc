@@ -8,6 +8,8 @@ return {
       sources = {
         null_ls.builtins.formatting.stylua,
         null_ls.builtins.formatting.shfmt,
+        -- TODO
+        -- null_ls.builtins.formatting.latexindent,
         null_ls.builtins.formatting.prettierd.with({
           extra_filetypes = { 'astro' },
         }),

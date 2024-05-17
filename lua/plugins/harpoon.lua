@@ -8,13 +8,8 @@ return {
 
       harpoon:setup({})
 
-      local Path = require('plenary.path')
-      local function normalize_path(buf_name, root)
-        return Path:new(buf_name):make_relative(root)
-      end
-
       vim.keymap.set('n', '<leader>a', function()
-        harpoon:list():append()
+        harpoon:list():add()
       end)
 
       vim.keymap.set('n', '<leader>e', function()
