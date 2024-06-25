@@ -1,5 +1,5 @@
 return {
-	enabled = true,
-	'lervag/vimtex',
-	ft = 'tex',
+  enabled = true,
+  lazy = false,
+  'lervag/vimtex',
 }

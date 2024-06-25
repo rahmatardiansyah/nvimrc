@@ -19,7 +19,6 @@ return {
         'markdown',
         'markdown_inline',
         'c',
-        'latex',
         'astro',
         'jsdoc',
         'typescript',

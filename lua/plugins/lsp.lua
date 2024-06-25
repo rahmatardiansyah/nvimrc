@@ -63,7 +63,36 @@ return {
       },
     })
 
-    lspconfig.tsserver.setup({})
+    require('lspconfig').tsserver.setup({})
+    -- require('lspconfig').tsserver.setup({
+    --   settings = {
+    --     typescript = {
+    --       inlayHints = {
+    --         includeInlayParameterNameHints = 'all',
+    --         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+    --         includeInlayFunctionParameterTypeHints = true,
+    --         includeInlayVariableTypeHints = true,
+    --         includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+    --         includeInlayPropertyDeclarationTypeHints = true,
+    --         includeInlayFunctionLikeReturnTypeHints = true,
+    --         includeInlayEnumMemberValueHints = true,
+    --       },
+    --     },
+    --     javascript = {
+    --       inlayHints = {
+    --         includeInlayParameterNameHints = 'all',
+    --         includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+    --         includeInlayFunctionParameterTypeHints = true,
+    --         includeInlayVariableTypeHints = true,
+    --         includeInlayVariableTypeHintsWhenTypeMatchesName = true,
+    --         includeInlayPropertyDeclarationTypeHints = true,
+    --         includeInlayFunctionLikeReturnTypeHints = true,
+    --         includeInlayEnumMemberValueHints = true,
+    --       },
+    --     },
+    --   },
+    -- })
+
     lspconfig.texlab.setup({})
     lspconfig.emmet_language_server.setup({
       filetypes = {
@@ -86,19 +115,19 @@ return {
           validate = true,
           lint = {
             unknownAtRules = 'ignore',
-          }
+          },
         },
         scss = {
           validate = true,
           lint = {
             unknownAtRules = 'ignore',
-          }
+          },
         },
         less = {
           validate = true,
           lint = {
             unknownAtRules = 'ignore',
-          }
+          },
         },
       },
     })
