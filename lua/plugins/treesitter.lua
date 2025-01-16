@@ -1,9 +1,6 @@
 return {
   enabled = true,
   'nvim-treesitter/nvim-treesitter',
-  dependencies = {
-    'windwp/nvim-ts-autotag',
-  },
   cmd = { 'TSInstall', 'TSBufEnable', 'TSBufDisable', 'TSModuleInfo' },
   config = function()
     require('nvim-treesitter.configs').setup({
@@ -32,10 +29,6 @@ return {
       },
       indent = {
         enable = true,
-      },
-      autotag = {
-        enable = true,
-        enable_close_on_tag = false,
       },
     })
   end,

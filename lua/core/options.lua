@@ -13,7 +13,7 @@ opt.number = true         -- Show line number
 opt.relativenumber = true -- Set number to relative
 opt.showmatch = false     -- Highlight matching parenthesis
 opt.foldmethod = 'marker' -- Enable folding (default 'foldmarker')
--- opt.colorcolumn = '100' -- Line lenght marker at 100 columns
+-- opt.colorcolumn = '100'   -- Line lenght marker at 100 columns
 opt.splitright = true     -- Vertical split to the right
 opt.splitbelow = true     -- Horizontal split to the bottom
 opt.ignorecase = true     -- Ignore case letters when search
@@ -22,6 +22,7 @@ opt.linebreak = true      -- Wrap on word boundary
 opt.termguicolors = true  -- Enable 24-bit RGB colors
 opt.laststatus = 3        -- Set global statusline
 opt.background = 'dark'   -- set to dark mode
+opt.signcolumn = 'yes'
 
 -- Tabs, indent
 opt.expandtab = true   -- Use spaces instead of tabs
@@ -37,7 +38,7 @@ opt.synmaxcol = 240   -- Max column for syntax highlight
 opt.updatetime = 250  -- ms to wait for trigger an event
 opt.undodir = vim.fn.stdpath('data') .. '/undo'
 opt.undofile = true
--- opt.shadafile = 'NONE' -- Remove mark 0-9
+opt.shadafile = 'NONE' -- Remove mark 0-9
 
 -- Startup
 opt.shortmess:append('sI') -- Disable nvim intro
