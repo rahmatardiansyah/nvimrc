@@ -2,7 +2,27 @@ return {
   'stevearc/oil.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
-    require('oil').setup({
+    local oil = require('oil')
+
+    local function get_open_cmd(path)
+      if vim.fn.has('mac') == 1 then
+        return { 'open', path }
+      elseif vim.fn.has('win32') == 1 then
+        if vim.fn.executable('rundll32') == 1 then
+          return { 'rundll32', 'url.dll,FileProtocolHandler', path }
+        else
+          return nil, 'rundll32 not found'
+        end
+      elseif vim.fn.executable('explorer.exe') == 1 then
+        return { 'explorer.exe', path }
+      elseif vim.fn.executable('xdg-open') == 1 then
+        return { 'xdg-open', path }
+      else
+        return nil, 'no handler found'
+      end
+    end
+
+    oil.setup({
       default_file_explorer = true,
       columns = {
         'icon',
@@ -33,7 +53,33 @@ return {
       experimental_watch_for_changes = false,
       keymaps = {
         ['g?'] = 'actions.show_help',
-        ['<CR>'] = 'actions.select',
+        ['<CR>'] = {
+          callback = function()
+            local ignored_mime = { 'image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/webp', 'video/*' }
+            local entry = oil.get_cursor_entry()
+            local file = vim.system({ 'file', '--mime-type', '-b', entry.name }, { text = true }):wait()
+
+            local dir = oil.get_current_dir()
+
+            local path = dir .. entry.name
+            for _, mime in ipairs(ignored_mime) do
+              if file.stdout:match(mime) then
+                if vim.ui.open then
+                  vim.ui.open(path)
+                  return
+                end
+
+                local cmd, err = get_open_cmd(path)
+                if not cmd then
+                  vim.notify(string.format('Could not open %s: %s', path, err), vim.log.levels.ERROR)
+                  return
+                end
+              end
+            end
+
+            oil.select()
+          end,
+        },
         ['<C-s>'] = 'actions.select_vsplit',
         ['<C-h>'] = 'actions.select_split',
         ['<C-t>'] = 'actions.select_tab',

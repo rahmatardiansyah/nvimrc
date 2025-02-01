@@ -26,3 +26,7 @@ map('n', 'N', 'Nzzzv')
 map('n', '<esc>', '<cmd>nohlsearch<CR>')
 
 map('v', '<leader>p', '"_dP')
+
+map('n', '<leader>c', [[:%s/<C-r><C-w>//gcI<Left><Left><Left><Left>]])
+
+map('v', '<leader>c', [["hy:%s/<C-r>h/<C-r>h/gcI<Left><Left><Left><left>]])

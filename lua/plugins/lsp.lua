@@ -9,12 +9,6 @@ return {
       branch = 'v4.x',
       lazy = true,
     },
-    {
-      'williamboman/mason.nvim',
-      lazy = false,
-      config = true,
-    },
-    { 'williamboman/mason-lspconfig.nvim' },
   },
   config = function()
     local lsp_zero = require('lsp-zero')
@@ -61,17 +55,6 @@ return {
       float = { border = 'rounded' },
     })
 
-    require('mason-lspconfig').setup({
-      ensure_installed = { 'lua_ls' },
-      handlers = {
-        lsp_zero.default_setup,
-        lua_ls = function()
-          local lua_opts = lsp_zero.nvim_lua_ls()
-          require('lspconfig').lua_ls.setup(lua_opts)
-        end,
-      },
-    })
-
     local lspconfig = require('lspconfig')
 
     lspconfig.lua_ls.setup({
@@ -86,8 +69,8 @@ return {
       },
     })
 
-    require('lspconfig').ts_ls.setup({})
-
+    lspconfig.nil_ls.setup({})
+    lspconfig.ts_ls.setup({})
     lspconfig.texlab.setup({})
     lspconfig.emmet_language_server.setup({
       filetypes = {

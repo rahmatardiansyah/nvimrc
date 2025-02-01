@@ -7,6 +7,7 @@ return {
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-path' },
     { 'saadparwaiz1/cmp_luasnip' },
+    { 'uga-rosa/cmp-dictionary' },
   },
   config = function()
     local lspconfig_defaults = require('lspconfig').util.default_config
@@ -38,6 +39,19 @@ return {
       },
       experimental = {
         ghost_text = false,
+      },
+    })
+
+    cmp.setup.filetype({ 'markdown', 'text' }, {
+      sources = cmp.config.sources({
+        { name = 'dictionary' },
+      }),
+    })
+
+    require('cmp_dictionary').setup({
+      paths = {
+        '/home/rahmat/.local/share/nvim/dictionary/english.dict',
+        '/home/rahmat/.local/share/nvim/dictionary/indonesian.dict',
       },
     })
   end,

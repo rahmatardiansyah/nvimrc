@@ -7,13 +7,21 @@ return {
   },
   config = function()
     local telescope = require('telescope')
+    local actions = require('telescope.actions')
+
     telescope.setup({
       defaults = {
-        file_ignore_patterns = { '%.jpeg', '%.png', '%.jpg', 'node_modules/.*' },
+        file_ignore_patterns = { '%.jpeg', '%.png', '%.jpg', 'node_modules/.*', '%.mp4', '%.mkv', '%.avi', '%.webm' },
         layout_config = {
           horizontal = {
             width = 0.9,
             preview_cutoff = 0,
+          },
+        },
+        mappings = {
+          i = {
+            ['<C-k>'] = actions.cycle_history_prev,
+            ['<C-j>'] = actions.cycle_history_next,
           },
         },
       },
