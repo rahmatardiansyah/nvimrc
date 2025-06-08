@@ -18,6 +18,6 @@ require('lazy').setup({
     notify = false,
   },
   install = {
-    colorscheme = { 'base16-tomorrow-night-eighties' },
+    colorscheme = { 'onedark' },
   },
 })

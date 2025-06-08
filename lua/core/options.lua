@@ -23,6 +23,7 @@ opt.termguicolors = true  -- Enable 24-bit RGB colors
 opt.laststatus = 3        -- Set global statusline
 opt.background = 'dark'   -- set to dark mode
 opt.signcolumn = 'yes'
+opt.conceallevel = 2
 
 -- Tabs, indent
 opt.expandtab = true   -- Use spaces instead of tabs

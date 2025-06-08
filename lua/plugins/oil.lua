@@ -55,7 +55,14 @@ return {
         ['g?'] = 'actions.show_help',
         ['<CR>'] = {
           callback = function()
-            local ignored_mime = { 'image/png', 'image/jpg', 'image/jpeg', 'image/gif', 'image/webp', 'video/*' }
+            local ignored_mime = {
+              'image/png',
+              'image/jpg',
+              'image/jpeg',
+              'image/gif',
+              'image/webp',
+              'video/webm',
+            }
             local entry = oil.get_cursor_entry()
             local file = vim.system({ 'file', '--mime-type', '-b', entry.name }, { text = true }):wait()
 
