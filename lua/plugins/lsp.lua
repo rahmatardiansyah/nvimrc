@@ -1,5 +1,5 @@
 return {
-  enabled = true,
+  enabled = false,
   'neovim/nvim-lspconfig',
   cmd = { 'LspInfo', 'LspInstall', 'LspStart' },
   event = { 'BufReadPre', 'BufNewFile' },

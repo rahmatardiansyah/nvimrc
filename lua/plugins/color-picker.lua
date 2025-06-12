@@ -1,8 +1,16 @@
 return {
   'eero-lehtinen/oklch-color-picker.nvim',
   event = 'VeryLazy',
-  opts = { auto_download = false },
+  version = '*',
   keys = {
-    { '<leader>v', '<cmd>ColorPickOklch<cr>', desc = 'Color pick under cursor' },
+    {
+      '<leader>v',
+      function()
+        require('oklch-color-picker').pick_under_cursor()
+      end,
+      desc = 'Color pick under cursor',
+    },
   },
+  ---@type oklch.Opts
+  opts = {},
 }
